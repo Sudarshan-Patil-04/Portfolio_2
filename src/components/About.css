@@ -1,86 +1,225 @@
-/* About.css */
+/* ===============================
+   ABOUT SECTION BASE
+================================= */
 
 .about-section {
-  font-family: 'Arial', sans-serif;
-  margin: 0 auto;
+  position: relative;
   max-width: 1100px;
-  padding: 20px;
-  background-color: #f0f4f8;
-  color: #333;
+  margin: 0 auto;
+  padding: 80px 20px;
+  font-family: 'Poppins', sans-serif;
+  color: #0f172a;
+  overflow: hidden;
 }
 
-h2, h3 {
-  color: #4b6a9a;
-  font-size: 2rem;
-  font-weight: bold;
+/* Soft futuristic background glow */
+.about-section::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(56,189,248,0.18) 0%, transparent 70%);
+  top: -150px;
+  left: -150px;
+  animation: floatGlow 12s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+@keyframes floatGlow {
+  from { transform: translate(0, 0); }
+  to { transform: translate(60px, 40px); }
+}
+
+
+/* ===============================
+   HEADINGS
+================================= */
+
+h2 {
   text-align: center;
-  margin-bottom: 20px;
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  margin-bottom: 10px;
+  color: #0f172a;
+  position: relative;
 }
 
-.intro p {
-  font-size: 1.1rem;
-  text-align: center;
-  color: #555;
-}
-
-.about-me, .education, .approach, .hobbies {
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 40px;
-  padding: 20px;
-}
-
-.about-image-text {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.about-image-text img {
-  width: 200px;
-  border-radius: 10px;
-  margin-right: 20px;
-  transition: transform 0.3s ease;
-}
-
-.about-image-text img:hover {
-  transform: scale(1.1);
+h2::after {
+  content: "";
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #38bdf8, #0ea5e9);
+  display: block;
+  margin: 12px auto 0;
+  border-radius: 5px;
 }
 
 h3 {
-  color: #4b6a9a;
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  color: #38bdf8;
 }
+
+
+/* ===============================
+   INTRO TEXT
+================================= */
+
+.intro p {
+  text-align: center;
+  color: #475569;
+  max-width: 600px;
+  margin: 0 auto 60px;
+  font-size: 1.1rem;
+}
+
+
+/* ===============================
+   CARD STYLE SECTIONS
+================================= */
+
+.about-me,
+.education,
+.approach,
+.hobbies {
+  position: relative;
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(16px);
+  border-radius: 20px;
+  padding: 35px;
+  margin-bottom: 40px;
+  box-shadow: 0 15px 35px rgba(15,23,42,0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  z-index: 1;
+}
+
+/* Smooth lift instead of scale explosion */
+.about-me:hover,
+.education:hover,
+.approach:hover,
+.hobbies:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(56,189,248,0.2);
+}
+
+
+/* ===============================
+   IMAGE + TEXT LAYOUT
+================================= */
+
+.about-image-text {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.about-image {
+  width: 220px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 20px;
+  position: relative;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 10px 25px rgba(15,23,42,0.15);
+}
+
+/* Futuristic edge glow */
+.about-image::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.about-image:hover {
+  transform: rotate(1.5deg) scale(1.03);
+  box-shadow: 0 20px 40px rgba(56,189,248,0.3);
+}
+
+.about-image:hover::before {
+  opacity: 1;
+}
+
+
+/* ===============================
+   LIST STYLING
+================================= */
 
 ul {
   padding-left: 20px;
-  list-style-type: square;
+  list-style: none;
 }
 
 ul li {
-  font-size: 1rem;
-  color: #444;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  position: relative;
+  padding-left: 20px;
+  color: #475569;
+  transition: color 0.3s ease;
 }
+
+ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 8px;
+  height: 8px;
+  background: #38bdf8;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(56,189,248,0.6);
+}
+
+ul li:hover {
+  color: #0f172a;
+}
+
+
+/* ===============================
+   RESUME BUTTON
+================================= */
 
 .resume-button {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 25px;
 }
 
 .resume-button button {
-  background-color: #4b6a9a;
-  color: white;
-  font-size: 1.1rem;
-  padding: 12px 20px;
+  padding: 14px 28px;
+  border-radius: 12px;
   border: none;
-  border-radius: 5px;
+  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+  color: #fff;
+  font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: all 0.35s ease;
+  box-shadow: 0 10px 25px rgba(56,189,248,0.3);
 }
 
 .resume-button button:hover {
-  background-color: #3b5670;
-  transform: scale(1.05);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(14,165,233,0.5);
+}
+
+
+/* ===============================
+   DARK MODE SUPPORT
+================================= */
+
+.dark-theme .about-me,
+.dark-theme .education,
+.dark-theme .approach,
+.dark-theme .hobbies {
+  background: rgba(30,41,59,0.6);
+  color: #f1f5f9;
+}
+
+.dark-theme .intro p,
+.dark-theme ul li {
+  color: #cbd5e1;
 }

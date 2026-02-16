@@ -7,9 +7,9 @@ const Contact = () => {
         <section  id="contact">
         <h2>Get in Touch</h2>
       <div className="contact-info">
-        <a href="mailto:sudarshanpatil7599@gmail.com"><FaEnvelope /> sudarshanpatil7599@gmail.com</a>
-        <a href="https://linkedin.com/in/sudarshan-patil-5581aa292" target="_blank" rel="noopener noreferrer"><FaLinkedin /> Linkedin : Sudarshan Patil</a>
-        <a href="https://github.com/Sudarshan00475" target="_blank" rel="noopener noreferrer"><FaGithub /> Github : Sudarshan Patil</a>
+        <a href="mailto:sudarshanpatil7599@gmail.com"><FaEnvelope />Email</a>
+        <a href="https://linkedin.com/in/sudarshan-patil-5581aa292" target="_blank" rel="noopener noreferrer"><FaLinkedin /> Linkedin Profile</a>
+        <a href="https://github.com/Sudarshan-Patil-04" target="_blank" rel="noopener noreferrer"><FaGithub /> Github Profile</a>
       </div>
 
       <p className="intro-text">I'd love to hear from you! Whether you have a question, project idea, or just want to say hello, feel free to reach out using the form below.</p>

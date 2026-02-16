@@ -1,5 +1,5 @@
 import './Skills.css';
-import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaPython, FaJava } from 'react-icons/fa';
+import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaPython, FaJava,FaNode, FaGithub } from 'react-icons/fa';
 
 const skills = [
   { name: "HTML5", icon: <FaHtml5 />, color: "#E44D26" },
@@ -8,6 +8,8 @@ const skills = [
   { name: "React", icon: <FaReact />, color: "#61DBFB" },
   { name: "Python", icon: <FaPython />, color: "#306998" },
   { name: "Java", icon: <FaJava />, color: "#f89820" },
+  { name: "Node.js", icon: <FaNode />, color: "#2af1af" },
+  { name: "GitHub", icon: <FaGithub />, color: "#14120f" },
 ];
 
 const Skills = () => {

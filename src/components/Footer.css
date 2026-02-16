@@ -1,10 +1,72 @@
-.site-footer {
-  background-color: #f0f0f0;
-  padding: 25px 0;
-  text-align: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  border-top: 1px solid #ddd;
+/* ===============================
+   THEME VARIABLES
+================================= */
+
+:root {
+  --bg: #f8fafc;
+  --card-bg: rgba(255, 255, 255, 0.75);
+  --text: #1e293b;
+  --primary: #2563eb;
+  --border: rgba(0, 0, 0, 0.08);
 }
+
+body.dark,
+[data-theme="dark"] {
+  --bg: #0f172a;
+  --card-bg: rgba(30, 41, 59, 0.8);
+  --text: #f1f5f9;
+  --primary: #3b82f6;
+  --border: rgba(255, 255, 255, 0.08);
+}
+
+/* ===============================
+   FOOTER BASE
+================================= */
+
+.site-footer {
+  position: relative;
+  background: var(--bg);
+  padding: 3rem 1rem 2rem;
+  text-align: center;
+  transition: 0.3s ease;
+  overflow: hidden;
+}
+
+/* Animated top gradient line */
+.site-footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    #2563eb,
+    #9333ea,
+    #06b6d4,
+    #2563eb
+  );
+  background-size: 300% 300%;
+  animation: gradientMove 6s linear infinite;
+}
+
+/* Subtle background glow */
+.site-footer::after {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, var(--primary), transparent 70%);
+  opacity: 0.08;
+  bottom: -150px;
+  left: -150px;
+  pointer-events: none;
+}
+
+/* ===============================
+   CONTENT
+================================= */
 
 .footer-content {
   max-width: 1000px;
@@ -14,23 +76,68 @@
 
 .site-footer p {
   margin: 0;
-  color: #444;
+  color: var(--text);
   font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  margin-bottom: 1.5rem;
 }
 
+/* ===============================
+   SOCIAL ICONS
+================================= */
+
 .footer-socials {
-  margin-top: 15px;
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 25px;
 }
 
 .footer-socials a {
-  font-size: 1.5rem;
-  color: #444;
-  transition: color 0.3s ease;
+  position: relative;
+  font-size: 1.6rem;
+  color: var(--text);
+  transition: 0.3s ease;
 }
 
+/* Glow circle behind icon */
+.footer-socials a::before {
+  content: "";
+  position: absolute;
+  inset: -10px;
+  border-radius: 50%;
+  background: var(--primary);
+  opacity: 0;
+  transition: 0.3s ease;
+  z-index: -1;
+}
+
+/* Hover effects */
 .footer-socials a:hover {
-  color: #007bff;
+  color: #fff;
+  transform: translateY(-6px);
+}
+
+.footer-socials a:hover::before {
+  opacity: 1;
+  box-shadow: 0 0 20px var(--primary);
+}
+
+/* ===============================
+   ANIMATIONS
+================================= */
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 300% 50%; }
+}
+
+/* ===============================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 768px) {
+  .footer-socials {
+    gap: 20px;
+  }
 }

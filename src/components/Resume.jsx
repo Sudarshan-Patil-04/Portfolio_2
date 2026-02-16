@@ -1,5 +1,5 @@
 const Resume = () => {
-  const resumeUrl = "/Sudarshan_Patil_CV.pdf"; // Replace with your actual PDF URL
+  const resumeUrl = "Sudarshan_Patil_CV.pdf"; // Replace with your actual PDF URL
 
   return (
     <div className="container py-5">

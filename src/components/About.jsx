@@ -12,7 +12,7 @@ const About = () => {
       <section className="about-me">
         <h3>About Me</h3>
         <div className="about-image-text">
-          <img src="/sid2.jpg" alt="Sidharth Patil" className="about-image"/>
+          <img src="sid2.jpg" alt="Sidharth Patil" className="about-image"/>
           <p>
             I’m Sudarshan Patil, a Data Science student at RCPIT Shirpur with skills in Java, Python, HTML, CSS, SQL, and JavaScript. I have a strong passion for technology, problem-solving, and continuous learning. I thrive in collaborative environments and believe in approaching challenges with creativity and attention to detail. Always eager to grow professionally and contribute to innovative solutions.
           </p>
@@ -22,8 +22,8 @@ const About = () => {
       <section className="education">
         <h3>Education</h3>
         <ul>
-          <li><strong>Degree:</strong> Bachelor's in Computer Science and Engineering (Data Science)</li>
-          <li><strong>Institution:</strong> R.C. Patel Institute of Technology, Shirpur</li>
+          <strong>Degree:</strong> Bachelor's in Computer Science and Engineering (Data Science) <br />
+          <strong>Institution:</strong> R.C. Patel Institute of Technology, Shirpur
         </ul>
       </section>
 
@@ -41,7 +41,7 @@ const About = () => {
           When I'm not coding, you'll find me hiking, reading, or exploring new technologies. I'm always eager to expand my knowledge and refine my skills.
         </p>
         <div className="resume-button">
-          <a href="/Sudarshan_Patil_CV.pdf" target="_blank" rel="noopener noreferrer">
+          <a href="Sudarshan_Patil_CV.pdf" target="_blank" rel="noopener noreferrer">
             <button>View Resume</button>
           </a>
         </div>

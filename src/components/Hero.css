@@ -1,0 +1,326 @@
+/* =====================================
+   HERO SECTION - PREMIUM VERSION
+====================================== */
+
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, #ffffff 0%, #f1f7ff 100%);
+}
+
+/* Ambient Light Glow */
+.hero-section::before {
+  content: "";
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  top: -250px;
+  right: -250px;
+  background: radial-gradient(circle, rgba(56,189,248,0.25), transparent 70%);
+  animation: rotateGlow 25s linear infinite;
+  z-index: 0;
+}
+
+@keyframes rotateGlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ===============================
+   PROFILE IMAGE
+================================= */
+
+.profile-wrapper {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-section img {
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #38bdf8;
+  box-shadow: 0 0 30px rgba(56,189,248,0.4);
+  transition: 0.4s ease;
+}
+
+.hero-section img:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 60px rgba(14,165,233,0.6);
+}
+
+/* Extra Glow Layer */
+.profile-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(56,189,248,0.3), transparent 70%);
+  filter: blur(40px);
+  z-index: -1;
+}
+
+/* ===============================
+   GLASS CARD
+================================= */
+
+.me {
+  position: relative;
+  margin-top: 40px;
+  padding: 40px 50px;
+  max-width: 780px;
+  width: 100%;
+  border-radius: 25px;
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.08);
+  z-index: 2;
+  animation: fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===============================
+   TEXT STYLING
+================================= */
+
+.hero-section h1 {
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #0f172a;
+}
+
+.hero-section h1 span {
+  background: linear-gradient(90deg, #38bdf8, #6366f1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle1 {
+  margin-top: 25px;
+  font-size: 0.9rem;
+  color: #0ea5e9;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.subtitle2 {
+  margin-top: 15px;
+  color: #475569;
+  line-height: 1.6;
+}
+
+/* Typed role */
+.typed-role {
+  margin-top: 15px;
+  font-size: 1.3rem;
+  font-family: monospace;
+  color: #1e293b;
+  min-height: 1.5em;
+}
+
+.role-prefix {
+  color: #64748b;
+}
+
+.cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.2em;
+  margin-left: 4px;
+  background: #38bdf8;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%,100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ===============================
+   BUTTONS
+================================= */
+
+.buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+
+.primary-btn,
+.secondary-btn {
+  padding: 12px 28px;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.35s ease;
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+  color: white;
+  box-shadow: 0 10px 25px rgba(56,189,248,0.4);
+}
+
+.primary-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(14,165,233,0.6);
+}
+
+.secondary-btn {
+  border: 2px solid #38bdf8;
+  color: #0f172a;
+}
+
+.secondary-btn:hover {
+  background: #38bdf8;
+  color: white;
+  transform: translateY(-5px);
+}
+
+/* ===============================
+   SOCIAL ICONS
+================================= */
+
+.social-icons {
+  margin-top: 30px;
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+}
+
+.social-icons a {
+  font-size: 1.6rem;
+  color: #1e293b;
+  transition: 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: translateY(-5px);
+  color: #38bdf8;
+}
+
+/* =====================================
+   HERO DARK MODE (About Style)
+====================================== */
+
+.dark-theme .hero-section {
+  background: linear-gradient(135deg, #0f172a 0%, #020617 100%);
+  color: #f1f5f9;
+}
+
+/* Floating background glow */
+.dark-theme .hero-section::before {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(56,189,248,0.18) 0%, transparent 70%);
+  top: -200px;
+  right: -200px;
+  animation: floatGlow 12s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+/* Glass Card */
+.dark-theme .me {
+  background: rgba(30,41,59,0.6);
+  backdrop-filter: blur(18px);
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(15,23,42,0.5);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Smooth lift like About */
+.dark-theme .me:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(56,189,248,0.2);
+}
+
+/* Headings */
+.dark-theme .hero-section h1 {
+  color: #f1f5f9;
+}
+
+.dark-theme .hero-section h1 span {
+  background: linear-gradient(90deg, #38bdf8, #0ea5e9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Subtitle */
+.dark-theme .subtitle2 {
+  color: #cbd5e1;
+}
+
+/* Typed Role */
+.dark-theme .typed-role {
+  color: #cbd5e1;
+}
+
+.dark-theme .role-prefix {
+  color: #94a3b8;
+}
+
+/* Cursor glow */
+.dark-theme .cursor {
+  background: #38bdf8;
+  box-shadow: 0 0 12px rgba(56,189,248,0.8);
+}
+
+/* Profile image */
+.dark-theme .hero-section img {
+  border: 4px solid #38bdf8;
+  box-shadow: 0 15px 35px rgba(56,189,248,0.3);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.dark-theme .hero-section img:hover {
+  transform: rotate(1.5deg) scale(1.03);
+  box-shadow: 0 20px 45px rgba(56,189,248,0.5);
+}
+
+/* Buttons */
+.dark-theme .primary-btn {
+  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+  box-shadow: 0 10px 25px rgba(56,189,248,0.3);
+}
+
+.dark-theme .primary-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(14,165,233,0.5);
+}
+
+.dark-theme .secondary-btn {
+  border: 2px solid #38bdf8;
+  color: #f1f5f9;
+}
+
+.dark-theme .secondary-btn:hover {
+  background: #38bdf8;
+  color: #0f172a;
+}
+
+/* Social icons */
+.dark-theme .social-icons a {
+  color: #cbd5e1;
+}
+
+.dark-theme .social-icons a:hover {
+  color: #38bdf8;
+  transform: translateY(-4px);
+}
